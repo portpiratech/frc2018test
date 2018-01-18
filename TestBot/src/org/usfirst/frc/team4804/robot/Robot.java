@@ -2,6 +2,8 @@
 package org.usfirst.frc.team4804.robot;
 
 
+import org.usfirst.frc.team4804.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team4804.robot.subsystems.LinearActuator;
 import org.usfirst.frc.team4804.robot.subsystems.SolenoidSubsystem;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -19,16 +21,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  * directory.
  */
 public class Robot extends IterativeRobot {
-
-
-	
-
 	
 	public static OI oi;
 	
 	//Subsystems
 	public static final SolenoidSubsystem solenoid = new SolenoidSubsystem();
-    
+	public static final DriveTrain driveTrain = new DriveTrain();
+    public static final LinearActuator linearActuator = new LinearActuator();
+	
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
 
@@ -105,6 +105,8 @@ public class Robot extends IterativeRobot {
 		// this line or comment it out.
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
+		//Scheduler.getInstance().add(new Drive());
+		
 	}
 
 	/**

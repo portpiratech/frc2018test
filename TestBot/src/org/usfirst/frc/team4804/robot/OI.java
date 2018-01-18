@@ -44,8 +44,8 @@ public class OI {
 	
 	public static XboxController driverController = new XboxController(RobotMap.DRIVER_CONTROLLER_ID);
 	
-	Button driverAButton = new JoystickButton(driverController, 1);
-	Button driverBButton = new JoystickButton(driverController, 2);
+	public static Button driverAButton = new JoystickButton(driverController, 1);
+	public static Button driverBButton = new JoystickButton(driverController, 2);
 	
 	public OI(){
 		driverAButton.whenPressed(new CannonPistonExtend());

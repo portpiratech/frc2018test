@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4804.robot.subsystems;
 
-import org.usfirst.frc.team4804.robot.OI;
 import org.usfirst.frc.team4804.robot.RobotMap;
 import org.usfirst.frc.team4804.robot.commands.CannonPistonStop;
 

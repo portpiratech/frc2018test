@@ -28,7 +28,11 @@ public class RobotMap {
 	//CANbus device IDs
 	public static int leftMotorControllerId = 11;
 	public static int rightMotorControllerId = 14;
+	public static int actuatorMotorId = 13;
 	public static final int PCM_ID = 1; //Compressor/Pneumatics Control Module (used for DoubleSolenoids)
+	
+	//Analog device IDs
+	public static int actuatorPotentiometerId = 0;
 	
 	//Solenoid port IDs
 	public static int solenoid1_port1 = 0; //DoubleSolenoid
