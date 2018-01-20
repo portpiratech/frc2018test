@@ -30,9 +30,14 @@ public class RobotMap {
 	public static int rightMotorControllerId = 14;
 	public static int actuatorMotorId = 13;
 	public static final int PCM_ID = 1; //Compressor/Pneumatics Control Module (used for DoubleSolenoids)
+	public static int puocMotorId = 12;
 	
 	//Analog device IDs
 	public static int actuatorPotentiometerId = 0;
+	
+	//Digital device IDs (DIO)
+	public static int encoderChannelA = 0;
+	public static int encoderChannelB = 1;
 	
 	//Solenoid port IDs
 	public static int solenoid1_port1 = 0; //DoubleSolenoid
