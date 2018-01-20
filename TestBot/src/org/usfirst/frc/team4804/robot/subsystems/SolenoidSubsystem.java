@@ -1,7 +1,7 @@
 package org.usfirst.frc.team4804.robot.subsystems;
 
 import org.usfirst.frc.team4804.robot.RobotMap;
-import org.usfirst.frc.team4804.robot.commands.CannonPistonStop;
+import org.usfirst.frc.team4804.robot.commands.PistonStop;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
@@ -25,7 +25,7 @@ public class SolenoidSubsystem extends Subsystem {
 
 	public void initDefaultCommand() {
 		//setDefaultCommand(new *);
-		setDefaultCommand(new CannonPistonStop());
+		setDefaultCommand(new PistonStop());
 	}
 
 	/**

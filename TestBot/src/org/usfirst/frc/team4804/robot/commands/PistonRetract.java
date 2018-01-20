@@ -1,16 +1,20 @@
+
 package org.usfirst.frc.team4804.robot.commands;
+
 import org.usfirst.frc.team4804.robot.Robot;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-
-
-public class CannonPistonExtend extends Command {
+/**
+ *
+ */
+public class PistonRetract extends Command {
 	
 	boolean finished = false;
 	
-    public CannonPistonExtend() {
+    public PistonRetract() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.solenoid);
     }
@@ -22,9 +26,10 @@ public class CannonPistonExtend extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	//Set cannons to launch mode, extend piston, wait, retract, stop cannons
+    	SmartDashboard.putString("In execute:","CannonPistonRetract");
     	
-    	Robot.solenoid.extendLauncher();
-    	Timer.delay(1.0);
+    	Robot.solenoid.retractLauncher();
+    	Timer.delay(0.5);
     	
     	finished = true;
     }
@@ -36,10 +41,6 @@ public class CannonPistonExtend extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.solenoid.retractLauncher();
-    	
-    	Timer.delay(1.0);
-    	
     	Robot.solenoid.stopLauncher();
     }
 

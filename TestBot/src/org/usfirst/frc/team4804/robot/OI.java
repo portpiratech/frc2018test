@@ -1,7 +1,7 @@
 package org.usfirst.frc.team4804.robot;
 
-import org.usfirst.frc.team4804.robot.commands.CannonPistonExtend;
-import org.usfirst.frc.team4804.robot.commands.CannonPistonRetract;
+import org.usfirst.frc.team4804.robot.commands.PistonExtend;
+import org.usfirst.frc.team4804.robot.commands.PistonRetract;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -48,8 +48,8 @@ public class OI {
 	public static Button driverBButton = new JoystickButton(driverController, 2);
 	
 	public OI(){
-		driverAButton.whenPressed(new CannonPistonExtend());
-		driverBButton.whenPressed(new CannonPistonRetract());
+		driverAButton.whenPressed(new PistonExtend());
+		driverBButton.whenPressed(new PistonRetract());
 	}
 	
 }
