@@ -35,7 +35,7 @@ public class RobotMap {
 	
 	//Analog device IDs
 	public static int actuatorPotentiometerId = 0;
-	
+	public static int grabberEncoderId = 1;
 	//Digital device IDs (DIO)
 	public static int encoderChannelA = 0;
 	public static int encoderChannelB = 1;

@@ -6,8 +6,7 @@ public final class CimMotor {
 	private TalonSRX motor;
 	
 	public CimMotor(int channel) {
-		TalonSRX motor = new TalonSRX(channel);
-		
+		motor = new TalonSRX(channel);
 	}
 
 	public TalonSRX getMotor() {
