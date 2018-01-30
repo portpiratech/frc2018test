@@ -24,13 +24,14 @@ public class RobotMap {
 	public static int rightStickYId = 5;
 	public static int leftStickYId = 1;
 	public static final int DRIVER_CONTROLLER_ID = 0;
+	public static final int OPERATOR_CONTROLLER_ID = 1;
 	
 	//CANbus device IDs
 	public static int leftMotorControllerId = 11;
 	public static int rightMotorControllerId = 14;
 	public static int actuatorMotorId = 13;
 	public static final int PCM_ID = 1; //Compressor/Pneumatics Control Module (used for DoubleSolenoids)
-	public static int puocMotorId = 12;
+	public static int grabberMotorId = 12;
 	
 	//Analog device IDs
 	public static int actuatorPotentiometerId = 0;

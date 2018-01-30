@@ -43,6 +43,7 @@ public class OI {
 	// button.whenReleased(new ExampleCommand());
 	
 	public static XboxController driverController = new XboxController(RobotMap.DRIVER_CONTROLLER_ID);
+	public static XboxController operatorController = new XboxController(RobotMap.OPERATOR_CONTROLLER_ID);
 	
 	public static Button driverAButton = new JoystickButton(driverController, 1);
 	public static Button driverBButton = new JoystickButton(driverController, 2);
