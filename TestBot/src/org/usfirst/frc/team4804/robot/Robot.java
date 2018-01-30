@@ -3,6 +3,7 @@ package org.usfirst.frc.team4804.robot;
 
 
 import org.usfirst.frc.team4804.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team4804.robot.subsystems.Grabber;
 import org.usfirst.frc.team4804.robot.subsystems.LinearActuator;
 import org.usfirst.frc.team4804.robot.subsystems.SolenoidSubsystem;
 
@@ -27,6 +28,7 @@ public class Robot extends IterativeRobot {
 	//Subsystems
 	public static final SolenoidSubsystem solenoid = new SolenoidSubsystem();
 	public static final DriveTrain driveTrain = new DriveTrain();
+	public static final Grabber grabber = new Grabber();
     public static final LinearActuator linearActuator = new LinearActuator();
 	
 	Command autonomousCommand;
