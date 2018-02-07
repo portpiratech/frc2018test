@@ -2,6 +2,7 @@
 package org.usfirst.frc.team4804.robot;
 
 
+import org.usfirst.frc.team4804.robot.subsystems.Conveyor;
 import org.usfirst.frc.team4804.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4804.robot.subsystems.Grabber;
 import org.usfirst.frc.team4804.robot.subsystems.LinearActuator;
@@ -31,7 +32,8 @@ public class Robot extends IterativeRobot {
 	public static final DriveTrain driveTrain = new DriveTrain();
 	public static final Grabber grabber = new Grabber();
     public static final LinearActuator linearActuator = new LinearActuator();
-	
+    public static Conveyor conveyor = new Conveyor();
+    
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
 

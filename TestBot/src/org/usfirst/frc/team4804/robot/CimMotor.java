@@ -21,5 +21,9 @@ public final class CimMotor {
 		motor.set(ControlMode.PercentOutput, speed);
 	}
 	
+	public void setVelocity(double targetVelocity){
+		motor.set(ControlMode.Velocity, targetVelocity);
+	}
+	
 
 }

@@ -31,7 +31,7 @@ public class RobotMap {
 	public static int rightMotorControllerId = 14;
 	public static int actuatorMotorId = 13;
 	public static final int PCM_ID = 1; //Compressor/Pneumatics Control Module (used for DoubleSolenoids)
-	public static int grabberMotorId = 12;
+	public static int grabberMotorId = 11; //changed to 11 temporarily since there is only one seat motor
 	
 	//Analog device IDs
 	public static int actuatorPotentiometerId = 0;
@@ -53,4 +53,12 @@ public class RobotMap {
 	public static double autoApproachSpeedMultiplier = 0.50;
 	public static double distanceToleranceMeters = 0.02;
 	public static double distanceSetpointMeters = 0.5;
+	public static double wheelDiameter = 200/1000; //200mm diameter converted to meters
+	public static int kTimeoutMs = 10;
+	public static int kPIDLoopIdx = 0;
+	
+	//Conveyer
+	public static int conveyorLimitId = 3;
+	public static double conveyorSpeed = .5;
+	public static int conveyorId = 12;
 }
