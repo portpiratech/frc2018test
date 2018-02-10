@@ -8,6 +8,7 @@ import org.usfirst.frc.team4804.robot.commands.Drive;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.Preferences;
@@ -25,12 +26,13 @@ public class DriveTrain extends Subsystem {
 	private CimMotor leftMotor;
 	private CimMotor rightMotor;
 	private Encoder backLeftEnc;
-
+	private ADXRS450_Gyro gyro;
 	
 	public DriveTrain() {
 		leftMotor = new CimMotor(RobotMap.leftMotorControllerId);
 		rightMotor = new CimMotor(RobotMap.rightMotorControllerId);
 		backLeftEnc = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
+		gyro = new ADXRS450_Gyro();
 		
 		SmartDashboard.putNumber("% input", 0.5);
 		
@@ -62,7 +64,9 @@ public class DriveTrain extends Subsystem {
     	double speedTest = SmartDashboard.getNumber("% input", 0.5);
     	leftMotor.setSpeed(leftY);
     	//rightMotor.setSpeed(rightY);
-    	
+    	gyro.reset();
+    	double gyroAngle = gyro.getAngle();
+    	SmartDashboard.putNumber("Gyro Angle", gyroAngle);
     	
     
     	
@@ -81,5 +85,5 @@ public class DriveTrain extends Subsystem {
     	SmartDashboard.putNumber("output %", outputPercent);
     	SmartDashboard.putNumber("velocity", velocity); //currently not working?
     }
-}
+ }
 

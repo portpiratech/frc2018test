@@ -33,6 +33,7 @@ public class Robot extends IterativeRobot {
 	public static final Grabber grabber = new Grabber();
     public static final LinearActuator linearActuator = new LinearActuator();
     public static Conveyor conveyor = new Conveyor();
+   
     
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
