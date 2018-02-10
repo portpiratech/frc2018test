@@ -60,7 +60,7 @@ public class DriveTrain extends Subsystem {
     	
     	//motorControlerName.set(controlMode, value);
     	double speedTest = SmartDashboard.getNumber("% input", 0.5);
-    	leftMotor.setSpeed(speedTest);
+    	leftMotor.setSpeed(leftY);
     	//rightMotor.setSpeed(rightY);
     	
     	

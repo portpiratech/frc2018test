@@ -42,19 +42,19 @@ public class Grabber extends Subsystem {
 		
 		grabberMotor.getMotor().enableCurrentLimit(true);
 		grabberMotor.getMotor().configPeakCurrentLimit(0, 0);
-		grabberMotor.getMotor().configContinuousCurrentLimit(1, 500);
+		grabberMotor.getMotor().configContinuousCurrentLimit(RobotMap.grabberMaxCurrent, 500);
 		
 		lastTime = System.currentTimeMillis();
 	}
 	
 	public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-		setDefaultCommand(new Grab());
+		//setDefaultCommand(new Grab());
     }
 	
-	public void close() {
-		count();
-		smartDashboardOutput();
+	public void close(double setSpeed) {
+		//count();
+		//smartDashboardOutput();
 		
 		
 		
@@ -62,7 +62,9 @@ public class Grabber extends Subsystem {
     	
     	//Encoder is 174.9:1 gear ratio (174.9 counts per revolution)
     	//(50ish reads per second)/(174.9 counts) = 0.285 speed necessary for full encoder resolution
-    	/*grabberMotor.setSpeed(0.28 * clampSpeed);*/
+	
+		grabberMotor.setSpeed(setSpeed);
+    	
     	
     	
     	//Code to count the max number of pulses per second
@@ -80,7 +82,7 @@ public class Grabber extends Subsystem {
 		SmartDashboard.putNumber("Seat motor encoder index", grabberAnalogTrigger.getIndex());
     	SmartDashboard.putBoolean("Seat motor encoder bool", getEncoderState());
     	SmartDashboard.putNumber("Seat motor encoder count test", count);
-    	SmartDashboard.putNumber("seat motor output current ", getMotorCurrent());
+    
 	}
 	
 	public double getMotorCurrent() {
@@ -104,18 +106,27 @@ public class Grabber extends Subsystem {
 				count--;
 			}
 		}*/
-		
+		System.out.println(count);
 		//Catches the rising edges
-		if(encState != getEncoderState() && getEncoderState() == true) { 
-			if(Math.signum(grabberMotor.getMotor().getMotorOutputPercent()) == 1) {
+		if(encState != getEncoderState() && getEncoderState()) { 
+			/*if(Math.signum(grabberMotor.getMotor().getMotorOutputPercent()) == 1) {
 				count++;
 			} else if(Math.signum(grabberMotor.getMotor().getMotorOutputPercent()) == -1) {
 				count--;
-			}
+			}*/
+			count++;
 		}
 		encState = getEncoderState();
 		
 		//if it is supposed to have 175 pulses(i'm not entirely sure) it worked at ~1/4 speed
+	}
+
+	public void resetCount() {
+		count = 0;
+	}
+
+	public int getCount() {
+		return count;
 	}
 	
 
